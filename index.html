@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ibrahim's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div id="tsparticles" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;"></div>
+
+  <nav id="navbar">
+    <a class="nav-logo" href="#"> &lt;/Ibrahim Al-Howaid></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="hero">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Available for work</p>
+      <h1>
+      <span class="first-name">Ibrahim</span><br>
+      <em class="last-name">Al-Howaid</em>
+      </h1>
+      <p class="hero-desc">I'm a <span id="typed-text"></span></p>
+      <div class="hero-cta">
+        <a href="#work" class="btn-primary">View Work</a>
+        <a href="#contact" class="btn-primary btn-confetti">Get in Touch</a>
+      </div>
+    </div>
+ <div class="hero-visual">
+      <div class="avatar-frame">
+        <img src="assets/Ibrahim Photo.jpeg" alt="Ibrahim Al-Howaid" class="profile-img">
+      </div>
+      <div class="deco-line"></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <p class="section-label">About</p>
+    <div class="about-grid">
+      <div class="gsap-fade">
+        <h2>A bit about me</h2>
+        <p>Write a paragraph or two about yourself here. Talk about your background, what drives your work, and what makes your approach unique.</p>
+        <p>This is also a great place to mention your location, the kinds of projects you gravitate toward, or values that guide your practice.</p>
+        <br/>
+        <a href="#contact" class="btn-primary">Say Hello</a>
+      </div>
+      <div class="skills-list gsap-fade">
+        <div class="skill-row">
+          <span class="skill-label">Skill One <span>90%</span></span>
+          <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Skill Two <span>80%</span></span>
+          <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Skill Three <span>75%</span></span>
+          <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Skill Four <span>65%</span></span>
+          <div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <p class="section-label">Selected Work</p>
+    <h2>Projects</h2>
+    
+    <div class="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+      
+      <div class="project-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2"
+           data-title="Project Title One" 
+           data-desc="This is the full, detailed description of Project One. I built this using XYZ technologies to solve ABC problems." 
+           data-github="https://github.com/IbraHIM-Howaid" 
+           data-demo="https://yourdemo.com">
+        <p class="project-num">01</p>
+        <h3 class="project-title">Project Title One</h3>
+        <p class="project-desc">Brief description of what this project was, the problem it solved, and your role in it.</p>
+        <div class="project-tags">
+          <span class="tag">Design</span>
+          <span class="tag">Research</span>
+        </div>
+        <span class="project-arrow">→</span>
+      </div>
+
+      <div class="project-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2"
+           data-title="Project Title Two" 
+           data-desc="This is the full, detailed description of Project Two. It was a challenging build but highly rewarding." 
+           data-github="https://github.com/IbraHIM-Howaid" 
+           data-demo="">
+        <p class="project-num">02</p>
+        <h3 class="project-title">Project Title Two</h3>
+        <p class="project-desc">Brief description of what this project was, the problem it solved, and your role in it.</p>
+        <div class="project-tags">
+          <span class="tag">Development</span>
+          <span class="tag">Strategy</span>
+        </div>
+        <span class="project-arrow">→</span>
+      </div>
+
+      <div class="project-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2"
+           data-title="Project Title Three" 
+           data-desc="This is the full, detailed description of Project Three. Notice how easy it is to update this text!" 
+           data-github="" 
+           data-demo="https://yourdemo.com">
+        <p class="project-num">03</p>
+        <h3 class="project-title">Project Title Three</h3>
+        <p class="project-desc">Brief description of what this project was, the problem it solved, and your role in it.</p>
+        <div class="project-tags">
+          <span class="tag">Branding</span>
+          <span class="tag">Web</span>
+        </div>
+        <span class="project-arrow">→</span>
+      </div>
+
+    </div>
+  </section>
+
+ <section id="experience">
+    <p class="section-label">Experience</p>
+    <h2>Where I've worked</h2>
+    
+    <div class="connected-timeline">
+      
+      <div class="connected-timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="connected-timeline-content">
+          
+          <div class="timeline-header">
+            <img class="timeline-logo" src="assets/Yipi Logo.png" alt="YIPI Logo">
+            <div class="timeline-meta">
+              <p class="timeline-date">2023 — 2024</p>
+              <h3 class="timeline-title">Youth in Policing Initiative Student</h3>
+              <p class="timeline-issuer">Ottawa Police Service</p>
+            </div>
+          </div>
+          
+          <p class="timeline-desc">
+            •Developed teamwork, communication, and leadership skills through diverse work assignments. <br>
+            •Maintained confidentiality and professionalism while handling sensitive information in a police environment. <br>
+            •Participated in educational workshops to gain insight into law enforcement and community service.
+</p>
+        </div>
+      </div>
+  </section>
+
+<section id="education">
+    <p class="section-label">Education</p>
+    <h2>What I've studied</h2>
+    
+    <div class="connected-timeline">
+      
+      <div class="connected-timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="connected-timeline-content">
+          
+          <div class="timeline-header">
+            <img class="timeline-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png" alt="University Logo">
+            <div class="timeline-meta">
+              <p class="timeline-date">TBD</p>
+              <h3 class="timeline-title">Bachelor of Science in Computer Science</h3>
+              <p class="timeline-issuer">TBD</p>
+            </div>
+          </div>
+          
+          <p class="timeline-desc">TBD</p>
+        </div>
+      </div>
+
+      <div class="connected-timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="connected-timeline-content">
+          
+          <div class="timeline-header">
+            <img class="timeline-logo" src="assets/SRB Logo.png" alt="College Logo">
+            <div class="timeline-meta">
+              <p class="timeline-date">2022 — 2026</p>
+              <h3 class="timeline-title">Highschool Degree</h3>
+              <p class="timeline-issuer">Sir Robert Borden Highschool</p>
+            </div>
+          </div>
+          
+          <p class="timeline-desc"></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+<section id="certifications">
+    <p class="section-label">Certifications</p>
+    <h2>Credentials & Achievements</h2>
+    
+    <div class="carousel-wrapper gsap-fade">
+      <button class="carousel-btn prev-btn">←</button>
+      
+      <div class="carousel-viewport">
+          
+        <div class="carousel-card">
+          <div class="card-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/WHMIS_logo.svg/1280px-WHMIS_logo.svg.png?_=20221111180316" alt="WHMIS Logo" height="60">
+          </div>
+          <h3>WHMIS (Worker Health And Safety)</h3>
+          <p class="cert-issuer">Hazard Awareness, Fire Safety, Electrical Safety, Aerial Lift Safety • 2026</p>
+          <a href="#" target="_blank" class="btn-ghost cert-btn">Verify ↗</a>
+        </div>
+
+        <div class="carousel-card">
+          <div class="card-logo">
+            <img src="assets/SJA.png" alt="St. John Ambulance Logo" height="60">
+          </div>
+          <h3>Emergency First Aid + Level C CPR + AED</h3>
+          <p class="cert-issuer">St. John Ambulance • 2024</p>
+          <a href="assets/Ibrahim Al-Howaid First Aid Certificate.pdf" target="_blank" class="btn-ghost cert-btn">Verify ↗</a>
+        </div>
+
+        <div class="carousel-card">
+          <div class="card-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg" alt="K8s Logo" height="35">
+          </div>
+          <h3>an even cooler certificate</h3>
+          <p class="cert-issuer">CNCF • 2024</p>
+          <a href="#" target="_blank" class="btn-ghost cert-btn">Verify ↗</a>
+        </div>
+
+        <div class="carousel-card">
+          <div class="card-logo">s
+            <h3 style="color:#ff4d4d; margin:0; font-family: sans-serif;">CompTIA</h3>
+          </div>
+          <h3>Another Cool certificate</h3>
+          <p class="cert-issuer">CompTIA • 2022</p>
+          <a href="#" target="_blank" class="btn-ghost cert-btn">Verify ↗</a>
+        </div>
+
+        <div class="carousel-card">
+          <div class="card-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" alt="Meta Logo" height="20">
+          </div>
+          <h3>Cool Certificate Here</h3>
+          <p class="cert-issuer">Meta • 2023</p>
+          <a href="#" target="_blank" class="btn-ghost cert-btn">Verify ↗</a>
+        </div>
+
+      </div>
+      
+      <button class="carousel-btn next-btn">→</button>
+    </div>
+  </section>
+
+
+  <section id="contact">
+    <p class="section-label" style="justify-content:center">Contact</p>
+    <h2>Let's work together</h2>
+    <p>Have a project in mind? I'd love to hear about it.</p>
+    <a href="mailto:ialhowaid@gmail.com" class="contact-email">ialhowaid@gmail.com</a>
+    <div class="social-row">
+      <a href="https://www.linkedin.com/in/ibrahim-al-howaid-35203a378/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/IbraHIM-Howaid" target="_blank">GitHub</a>
+      <a href="assets/Ibrahim Al-Howaid Resume 2026.pdf" target="_blank">Read.cv</a>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Ibrahim Al-Howaid</span>
+    <span>Built w/ Vanilla JS, GSAP & tsParticles</span>
+  </footer>
+
+<div id="project-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <h2 id="modal-title">Project Title</h2>
+      <p id="modal-desc">Detailed project description will go here...</p>
+      
+      <div class="modal-buttons">
+        <a href="#" id="modal-github" target="_blank" class="btn-ghost">View GitHub</a>
+        <a href="#" id="modal-demo" target="_blank" class="btn-primary">Live Demo</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrambleTextPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.0.3/tsparticles.bundle.min.js"></script>
+  <script src="script.js"></script>
+
+
+
+  
+</body>
+</html>
