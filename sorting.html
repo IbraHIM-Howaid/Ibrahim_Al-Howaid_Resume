@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Visualizer | ICS4U</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: white;
+            font-family: 'DM Mono', monospace;
+            text-align: center;
+            padding: 20px;
+        }
+        .header {
+            margin-bottom: 30px;
+        }
+        .controls {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        button:hover { background-color: #45a049; }
+        .btn-race { background-color: #e91e63; }
+        .btn-race:hover { background-color: #d81b60; }
+        .btn-reset { background-color: #2196F3; }
+        .btn-reset:hover { background-color: #1e88e5; }
+        
+        /* CSS Grid for side-by-side layout */
+        .visualizer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .algo-section {
+            background-color: #2a2a2a;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .array-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 250px;
+            margin-top: 20px;
+            gap: 2px;
+        }
+        .bar {
+            width: 15px;
+            background-color: #4CAF50;
+        }
+        
+        /* Make it stack on smaller screens */
+        @media (max-width: 900px) {
+            .visualizer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Algorithm Visualizer</h1>
+        <p>Select an individual algorithm to watch, or race them all at the same time!</p>
+        
+        <div class="controls">
+            <button class="btn-reset" onclick="generateArrays()">Generate New Array</button>
+            <button onclick="bubbleSort()">Run Bubble</button>
+            <button onclick="selectionSort()">Run Selection</button>
+            <button onclick="insertionSort()">Run Insertion</button>
+            <button class="btn-race" onclick="startRace()">Race All!</button>
+        </div>
+    </div>
+
+    <div class="visualizer-grid">
+        <div class="algo-section">
+            <h2>Bubble Sort</h2>
+            <div id="bubble-container" class="array-container"></div>
+        </div>
+        <div class="algo-section">
+            <h2>Selection Sort</h2>
+            <div id="selection-container" class="array-container"></div>
+        </div>
+        <div class="algo-section">
+            <h2>Insertion Sort</h2>
+            <div id="insertion-container" class="array-container"></div>
+        </div>
+    </div>
+
+    <script>
+        let baseArray = []; 
+        const delayTime = 30; 
+
+        //  Generate the main array and copy it to all screens
+        function generateArrays() {
+            baseArray = [];
+            for (let i = 0; i < 25; i++) {
+                baseArray.push(Math.floor(Math.random() * 230) + 20); 
+            }
+            drawArray('bubble-container', baseArray);
+            drawArray('selection-container', baseArray);
+            drawArray('insertion-container', baseArray);
+        }
+
+        function drawArray(containerId, arr) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = '';
+            for (let i = 0; i < arr.length; i++) {
+                let bar = document.createElement('div');
+                bar.classList.add('bar');
+                bar.style.height = `${arr[i]}px`;
+                container.appendChild(bar);
+            }
+        }
+
+        const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+        // --- ALGORITHM 1: BUBBLE SORT ---
+        async function bubbleSort() {
+            // Reset this specific container to the base array before sorting
+            drawArray('bubble-container', baseArray); 
+            let arr = [...baseArray]; 
+            let bars = document.querySelectorAll('#bubble-container .bar');
+            
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = 0; j < arr.length - i - 1; j++) {
+                    bars[j].style.backgroundColor = 'red';
+                    bars[j+1].style.backgroundColor = 'red';
+                    await sleep(delayTime);
+
+                    if (arr[j] > arr[j+1]) {
+                        let temp = arr[j];
+                        arr[j] = arr[j+1];
+                        arr[j+1] = temp;
+                        
+                        bars[j].style.height = arr[j] + 'px';
+                        bars[j+1].style.height = arr[j+1] + 'px';
+                    }
+                    bars[j].style.backgroundColor = '#4CAF50';
+                    bars[j+1].style.backgroundColor = '#4CAF50';
+                }
+            }
+        }
+
+        // --- ALGORITHM 2: SELECTION SORT ---
+        async function selectionSort() {
+            drawArray('selection-container', baseArray);
+            let arr = [...baseArray];
+            let bars = document.querySelectorAll('#selection-container .bar');
+            
+            for (let i = 0; i < arr.length; i++) {
+                let minIdx = i;
+                bars[minIdx].style.backgroundColor = 'blue';
+                
+                for (let j = i + 1; j < arr.length; j++) {
+                    bars[j].style.backgroundColor = 'red';
+                    await sleep(delayTime);
+                    
+                    if (arr[j] < arr[minIdx]) {
+                        bars[minIdx].style.backgroundColor = '#4CAF50';
+                        minIdx = j;
+                        bars[minIdx].style.backgroundColor = 'blue';
+                    } else {
+                        bars[j].style.backgroundColor = '#4CAF50';
+                    }
+                }
+                
+                if (minIdx !== i) {
+                    let temp = arr[i];
+                    arr[i] = arr[minIdx];
+                    arr[minIdx] = temp;
+                    
+                    // Update all bar heights to match the array state
+                    for (let k = 0; k < arr.length; k++) {
+                        bars[k].style.height = arr[k] + 'px';
+                    }
+                }
+                bars[minIdx].style.backgroundColor = '#4CAF50';
+                bars[i].style.backgroundColor = '#4CAF50';
+            }
+        }
+
+        // --- ALGORITHM 3: INSERTION SORT ---
+        async function insertionSort() {
+            drawArray('insertion-container', baseArray);
+            let arr = [...baseArray];
+            let bars = document.querySelectorAll('#insertion-container .bar');
+            
+            for (let i = 1; i < arr.length; i++) {
+                let key = arr[i];
+                let j = i - 1;
+                
+                bars[i].style.backgroundColor = 'orange';
+                await sleep(delayTime);
+
+                while (j >= 0 && arr[j] > key) {
+                    bars[j].style.backgroundColor = 'red';
+                    arr[j + 1] = arr[j];
+                    bars[j + 1].style.height = arr[j + 1] + 'px';
+                    await sleep(delayTime);
+                    
+                    bars[j].style.backgroundColor = '#4CAF50';
+                    j = j - 1;
+                }
+                arr[j + 1] = key;
+                bars[j + 1].style.height = arr[j + 1] + 'px';
+                bars[i].style.backgroundColor = '#4CAF50';
+            }
+        }
+
+        // Trigger all three at the same time
+        function startRace() {
+            bubbleSort();
+            selectionSort();
+            insertionSort();
+        }
+
+        // Run when the page loads
+        generateArrays();
+    </script>
+</body>
+</html>
