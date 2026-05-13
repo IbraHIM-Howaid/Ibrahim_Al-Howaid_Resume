@@ -72,11 +72,11 @@ h1 em { font-style: italic; color: var(--accent); }
   border-radius: 24px; 
   z-index: 1;
   
-  /* 👇 ADD THESE TO CONTROL THE OVERALL SIZE 👇 */
-  width: 500px;  /* Adjust this number down to make it smaller (e.g., 200px) */
-  height: 600px; /* Keep this exactly the same as the width for a perfect square/circle */
   
-  /* Optional: If making it smaller pushes it off-center, this will center it again */
+  width: 500px;  
+  height: 600px; 
+  
+
   margin: 0 auto; 
 }
 
@@ -84,15 +84,14 @@ h1 em { font-style: italic; color: var(--accent); }
 .avatar-frame::before {
   content: "";
   position: absolute;
-  /* Negative values push the gradient outside the image to create the border */
   top: -4px; 
   left: -4px; 
   right: -4px; 
   bottom: -4px; 
   /* Uses the gold and green hex codes from your particle background */
   background: linear-gradient(135deg, #c8a96e 0%, #7b9e87 100%); 
-  border-radius: 26px; /* Should be slightly larger than the frame's radius */
-  z-index: -1; /* Pushes it behind your photo */
+  border-radius: 26px; 
+  z-index: -1; 
   
   /* THIS IS THE SHADOW: Higher pixels = bigger glow. 
      Change this to blur(0) if you just want a solid gradient line with no glow. */
@@ -101,7 +100,7 @@ h1 em { font-style: italic; color: var(--accent); }
   transition: all 0.3s ease;
 }
 
-/* Optional: Make the shadow glow brighter when you hover over it */
+/*  Make the shadow glow brighter when you hover over it */
 .avatar-frame:hover::before {
   filter: blur(20px);
   opacity: 1;
@@ -112,11 +111,10 @@ h1 em { font-style: italic; color: var(--accent); }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 24px; /* MUST match the .avatar-frame radius */
+  border-radius: 24px; 
   display: block;
   position: relative;
   z-index: 2;
-  /* Optional: Adds a dark inner border to separate your photo from the colorful glow */
   border: 2px solid var(--bg); 
 }
 
@@ -173,9 +171,9 @@ h2 {
 #work .projects-grid { 
   display: grid; 
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
-  gap: 2.5rem; /* 👈 Increased spacing between cards */
+  gap: 2.5rem; 
   margin-top: 3rem; 
-  /* Removed the old background that was creating the harsh grid lines */
+ 
 }
 
 .project-card {
@@ -474,7 +472,7 @@ h1 {
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 8px;
-  flex-shrink: 0; /* Prevents the logo from squishing on mobile */
+  flex-shrink: 0;
 }
 
 

@@ -213,7 +213,14 @@ tsParticles.load({
     background: { color: { value: "transparent" } },
     particles: {
       number: { value: 100, density: { enable: true, width: 800, height: 800 } },
-      color: { value: ["#c8a96e", "#ffffff"] }, // Matches your gold accent
+      color: { value: ["#c8a96e", "#ffffff"] },
+      line_linked: {
+      color: "#ffffff",
+      distance: 150,
+      enable: true,
+      opacity: 0.4,
+      width: 1
+    },
       opacity: { value: { min: 0.1, max: 0.5 } },
       size: { value: { min: 1, max: 2 } },
       move: { enable: true, speed: 0.5, direction: "none", random: true, straight: false, outModes: "out" }
@@ -251,7 +258,7 @@ document.querySelectorAll('.btn-confetti').forEach(btn => {
       particleCount: 80,
       spread: 60,
       origin: { x: x, y: y },
-      colors: ['#c8a96e', '#7b9e87', '#ffffff'] // Matches your CSS variables!
+      colors: ['#c8a96e', '#7b9e87', '#ffffff'] 
     });
   });
 });
@@ -264,12 +271,11 @@ document.querySelectorAll('.btn-confetti').forEach(btn => {
         'Computer Enthusiast.', 
         'Professional Over-thinker.',
         'Team Player.', 
-        'History Nerd.',
         'Problem Solver.',
         'Cappuccino Maniac.',
         'Pattern Finder.',
         'Cat GIF Hoarder.'
-      ], // Replace these with your actual titles!
+      ], 
       typeSpeed: 80,      // Speed of typing
       backSpeed: 50,      // Speed of deleting
       backDelay: 1500,    // How long it pauses before deleting

@@ -1,0 +1,25 @@
+{
+  "projects": [
+    {
+      "title": "",
+      "description": "",
+      "tags": ["Vanilla JS", "GSAP", "API"],
+      "link": "#",
+      "image": ""
+    },
+    {
+      "title": "",
+      "description": "",
+      "tags": ["HTML", "CSS"],
+      "link": "",
+      "image": ""
+    },
+    {
+      "title": "",
+      "description": "",
+      "tags": ["JavaScript"],
+      "link": "#",
+      "image": ""
+    }
+  ]
+}
