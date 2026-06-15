@@ -48,27 +48,27 @@
     <div class="about-grid">
       <div class="gsap-fade">
         <h2>A bit about me</h2>
-        <p>Insert random yap here.</p>
-        <p>Insert even more yap over here about yourself.</p>
+        <p>I'm a student developer based in Ottawa who likes building things that people actually use. I'm most drawn to projects that let me work a problem from end to end, from the first rough prototype to a version that holds up in the real world.</p>
+        <p>I move comfortably between software and hardware, and I'm always looking for the next thing to learn. Outside of code, I'm fluent in English, French, and Arabic, and I'm happiest when I'm figuring out how something works.</p>
         <br/>
         <a href="#contact" class="btn-primary">Say Hello</a>
       </div>
       <div class="skills-list gsap-fade">
         <div class="skill-row">
-          <span class="skill-label">Skill One <span>90%</span></span>
+          <span class="skill-label">Python / Flask <span>90%</span></span>
           <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
         </div>
         <div class="skill-row">
-          <span class="skill-label">Skill Two <span>80%</span></span>
+          <span class="skill-label">JavaScript / HTML / CSS <span>80%</span></span>
           <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
         </div>
         <div class="skill-row">
-          <span class="skill-label">Skill Three <span>75%</span></span>
+          <span class="skill-label">Embedded C++ (ESP32 / Arduino) <span>75%</span></span>
           <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
         </div>
         <div class="skill-row">
-          <span class="skill-label">Skill Four <span>65%</span></span>
-          <div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
+          <span class="skill-label">SQL / PostgreSQL <span>70%</span></span>
+          <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
         </div>
       </div>
     </div>
@@ -81,46 +81,33 @@
     <div class="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
       
       <div class="project-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2"
-           data-title="Project Title One" 
-           data-desc="This is the full, detailed description of Project One. I built this using XYZ technologies to solve ABC problems." 
-           data-github="https://github.com/IbraHIM-Howaid" 
-           data-demo="https://yourdemo.com">
+           data-title="Wireless Shop Doorbell" 
+           data-desc="A two-unit wireless doorbell built from scratch with a partner to solve a real access problem in the SWIFT workshop. Two ESP32 microcontrollers communicate directly via ESP-NOW, with no router needed. The battery-powered button unit spends almost all its time in deep sleep drawing near-zero power, waking on an RTC pin (GPIO33) only when pressed to fire an ESP-NOW packet, then dropping straight back to sleep so the battery lasts months. The wall-powered speaker unit stays always-on, listens for the signal, and drives a speaker through a BC547 transistor on GPIO25 to play the chime. I wrote all the firmware in C++ (Arduino IDE) and iterated through LED, speaker, and deep-sleep prototypes; my partner designed the 3D-printed weatherproof enclosure in Fusion 360." 
+           data-github="" 
+           data-demo="">
         <p class="project-num">01</p>
-        <h3 class="project-title">Project Title One</h3>
-        <p class="project-desc">Brief description of what this project was, the problem it solved, and your role in it.</p>
+        <h3 class="project-title">Wireless Shop Doorbell</h3>
+        <p class="project-desc">A two-unit wireless doorbell built from two ESP32s communicating over ESP-NOW, with a deep-sleep battery button and a wall-powered chime. Firmware in C++, enclosure in Fusion 360.</p>
         <div class="project-tags">
-          <span class="tag">Design</span>
-          <span class="tag">Research</span>
+          <span class="tag">ESP32</span>
+          <span class="tag">ESP-NOW</span>
+          <span class="tag">C++</span>
         </div>
         <span class="project-arrow">→</span>
       </div>
 
       <div class="project-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2"
-           data-title="Project Title Two" 
-           data-desc="This is the full, detailed description of Project Two. It was a challenging build but highly rewarding." 
-           data-github="https://github.com/IbraHIM-Howaid" 
+           data-title="Carleton Manor EMR" 
+           data-desc="A full-stack clinical Electronic Medical Record web app built for Carleton University's nursing simulation lab and actively used by nursing students and instructors. Students chart on simulated patients across 24 assessment sections (vitals, neuro, cardiovascular, MAR, and more); instructors get a dedicated admin panel with role-based access, real-time student activity tracking and online status, and bulk PDF chart export (a ZIP organized student → patient → PDF). I built the authentication and CSRF security layer, the data model, the instructor analytics dashboard, and a multi-page PDF generation engine that renders full patient assessment reports from live charting data, stamping each page's footer with who charted and who exported it. I coordinated with Carleton faculty to tailor the system to specific course requirements, and ran ongoing testing and QA to keep it reliable and secure under active use." 
+           data-github="" 
            data-demo="">
         <p class="project-num">02</p>
-        <h3 class="project-title">Project Title Two</h3>
-        <p class="project-desc">Brief description of what this project was, the problem it solved, and your role in it.</p>
+        <h3 class="project-title">Carleton Manor EMR</h3>
+        <p class="project-desc">A full-stack clinical EMR web app deployed in Carleton University's nursing simulation lab, with role-based access, an instructor analytics dashboard, and automated multi-page PDF chart export.</p>
         <div class="project-tags">
-          <span class="tag">Development</span>
-          <span class="tag">Strategy</span>
-        </div>
-        <span class="project-arrow">→</span>
-      </div>
-
-      <div class="project-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2"
-           data-title="Sorting Algorithm Visualizer" 
-           data-desc="An interactive JavaScript visualizer that races standard algorithms (Bubble, Selection, Insertion, Merge) to demonstrate time complexity in real-time." 
-           data-github="" 
-           data-demo="sorting.html">
-        <p class="project-num">03</p>
-        <h3 class="project-title">Sorting Algorithm Visualizer</h3>
-        <p class="project-desc">An interactive JavaScript visualizer that races standard algorithms (Bubble, Selection, Insertion, Merge) to demonstrate time complexity in real-time.</p>
-        <div class="project-tags">
-          <span class="tag">Algorithms</span>
-          <span class="tag">JavaScript</span>
+          <span class="tag">Python</span>
+          <span class="tag">Flask</span>
+          <span class="tag">PostgreSQL</span>
         </div>
         <span class="project-arrow">→</span>
       </div>
@@ -141,7 +128,7 @@
           <div class="timeline-header">
             <img class="timeline-logo" src="assets/Yipi Logo.png" alt="YIPI Logo">
             <div class="timeline-meta">
-              <p class="timeline-date">2023 — 2024</p>
+              <p class="timeline-date">2023 to 2024</p>
               <h3 class="timeline-title">Youth in Policing Initiative Student</h3>
               <p class="timeline-issuer">Ottawa Police Service</p>
             </div>
@@ -151,6 +138,27 @@
             •Developed teamwork, communication, and leadership skills through diverse work assignments. <br>
             •Maintained confidentiality and professionalism while handling sensitive information in a police environment. <br>
             •Participated in educational workshops to gain insight into law enforcement and community service.
+</p>
+        </div>
+      </div>
+
+      <div class="connected-timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="connected-timeline-content">
+          
+          <div class="timeline-header">
+            <img class="timeline-logo" src="assets/ocdsb-logo.png" alt="OCDSB Logo">
+            <div class="timeline-meta">
+              <p class="timeline-date">2026 to Present</p>
+              <h3 class="timeline-title">SWIFT Co-op Student</h3>
+              <p class="timeline-issuer">OCDSB SWIFT Program, Kanata North</p>
+            </div>
+          </div>
+          
+          <p class="timeline-desc">
+            •Designed and shipped a full-stack clinical EMR web app actively used by Carleton University's nursing simulation lab. <br>
+            •Built a wireless ESP32 doorbell system (ESP-NOW, deep sleep, C++ firmware) from scratch with a partner. <br>
+            •Toured and received technical briefings from BlackBerry QNX, Nokia, Telesat, Nordion, Ross Video, and the NRC Photonics Fabrication Centre.
 </p>
         </div>
       </div>
@@ -167,15 +175,34 @@
         <div class="connected-timeline-content">
           
           <div class="timeline-header">
-            <img class="timeline-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png" alt="University Logo">
+            <img class="timeline-logo" src="assets/University_of_Ottawa_Logo.svg.png" alt="University of Ottawa Logo">
             <div class="timeline-meta">
-              <p class="timeline-date">TBD</p>
-              <h3 class="timeline-title">Bachelor of Science in Computer Science</h3>
-              <p class="timeline-issuer">TBD</p>
+              <p class="timeline-date">2026 to Present</p>
+              <h3 class="timeline-title">Honours BSc in Computer Science (Co-op)</h3>
+              <p class="timeline-issuer">University of Ottawa</p>
             </div>
           </div>
           
-          <p class="timeline-desc">TBD</p>
+          <p class="timeline-desc">Admitted to the Honours Computer Science program with co-op, combining academic coursework with paid industry work terms.</p>
+        </div>
+      </div>
+
+      <div class="connected-timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="connected-timeline-content">
+          
+          <div class="timeline-header">
+            <img class="timeline-logo" src="assets/ocdsb-logo.png" alt="OCDSB Logo">
+            <div class="timeline-meta">
+              <p class="timeline-date">2026 to Present</p>
+              <h3 class="timeline-title">OCDSB SWIFT Program</h3>
+              <p class="timeline-issuer">SWIFT Launch Secondary, Kanata North Technology Park</p>
+            </div>
+          </div>
+          
+          <p class="timeline-desc">
+            Selected for a competitive co-op program embedded in Canada's largest tech hub, building industry-led projects alongside professional engineers. Designed and shipped a full-stack EMR used by Carleton University, built a wireless ESP32 doorbell, and toured industry leaders including BlackBerry QNX, Nokia, Telesat, Nordion, Ross Video, and the NRC Photonics Fabrication Centre.
+          </p>
         </div>
       </div>
 
@@ -186,13 +213,13 @@
           <div class="timeline-header">
             <img class="timeline-logo" src="assets/SRB Logo.png" alt="College Logo">
             <div class="timeline-meta">
-              <p class="timeline-date">2022 — 2026</p>
+              <p class="timeline-date">2022 to 2026</p>
               <h3 class="timeline-title">Highschool Degree</h3>
               <p class="timeline-issuer">Sir Robert Borden Highschool</p>
             </div>
           </div>
           
-          <p class="timeline-desc"></p>
+          <p class="timeline-desc">High school diploma with a focus on STEM.</p>
         </div>
       </div>
 
@@ -237,20 +264,11 @@
         </div>
 
         <div class="carousel-card">
-          <div class="card-logo">s
-            <h3 style="color:#ff4d4d; margin:0; font-family: sans-serif;">CompTIA</h3>
-          </div>
-          <h3>Another Cool certificate</h3>
-          <p class="cert-issuer">CompTIA • 2022</p>
-          <a href="#" target="_blank" class="btn-ghost cert-btn">Verify ↗</a>
-        </div>
-
-        <div class="carousel-card">
           <div class="card-logo">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" alt="Meta Logo" height="20">
+            <h3 style="color:#ff4d4d; margin:0; font-family: sans-serif;">G2</h3>
           </div>
-          <h3>Cool Certificate Here</h3>
-          <p class="cert-issuer">Meta • 2023</p>
+          <h3>Ontario Driver's Licence, Class G2</h3>
+          <p class="cert-issuer">Ministry of Transportation Ontario</p>
           <a href="#" target="_blank" class="btn-ghost cert-btn">Verify ↗</a>
         </div>
 
@@ -269,7 +287,7 @@
     <div class="social-row">
       <a href="https://www.linkedin.com/in/ibrahim-al-howaid-35203a378/" target="_blank">LinkedIn</a>
       <a href="https://github.com/IbraHIM-Howaid" target="_blank">GitHub</a>
-      <a href="assets/Ibrahim Al-Howaid Resume 2026.pdf" target="_blank">Read.cv</a>
+      <a href="assets/Ibrahim Al-Howaid Resume 2026.pdf" target="_blank">Resume</a>
     </div>
   </section>
 
