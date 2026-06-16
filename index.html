@@ -48,27 +48,27 @@
     <div class="about-grid">
       <div class="gsap-fade">
         <h2>A bit about me</h2>
-        <p>I'm a student developer based in Ottawa who likes building things that people actually use. I'm most drawn to projects that let me work a problem from end to end, from the first rough prototype to a version that holds up in the real world.</p>
-        <p>I move comfortably between software and hardware, and I'm always looking for the next thing to learn. Outside of code, I'm fluent in English, French, and Arabic, and I'm happiest when I'm figuring out how something works.</p>
+        <p>I'm a student developer from Ottawa heading into Honours Computer Science (Co-op) at the University of Ottawa. I'm happiest when I'm figuring out how something works and then making it work better,  I'm most drawn to projects that let me work a problem from end to end, from the first rough prototype to a version that's polished and holds up in the real world. </p>
+        <p>In my spare time, you can find me building side projects, competing at various different hackathons (like Hack Club!), and staying active with sports and the gym. I'm fluent in English, French, and Arabic, and I'm always looking for the next thing to learn!</p>
         <br/>
         <a href="#contact" class="btn-primary">Say Hello</a>
       </div>
       <div class="skills-list gsap-fade">
         <div class="skill-row">
-          <span class="skill-label">Python / Flask <span>90%</span></span>
+          <span class="skill-label">Python / Flask <span>95%</span></span>
+          <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">JavaScript / HTML / CSS <span>90%</span></span>
           <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
         </div>
         <div class="skill-row">
-          <span class="skill-label">JavaScript / HTML / CSS <span>80%</span></span>
+          <span class="skill-label">C++ <span>85%</span></span>
+          <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">SQL / PostgreSQL <span>80%</span></span>
           <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
-        </div>
-        <div class="skill-row">
-          <span class="skill-label">Embedded C++ (ESP32 / Arduino) <span>75%</span></span>
-          <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
-        </div>
-        <div class="skill-row">
-          <span class="skill-label">SQL / PostgreSQL <span>70%</span></span>
-          <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
         </div>
       </div>
     </div>
@@ -83,7 +83,7 @@
       <div class="project-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2"
            data-title="Wireless Shop Doorbell" 
            data-desc="A two-unit wireless doorbell built from scratch with a partner to solve a real access problem in the SWIFT workshop. Two ESP32 microcontrollers communicate directly via ESP-NOW, with no router needed. The battery-powered button unit spends almost all its time in deep sleep drawing near-zero power, waking on an RTC pin (GPIO33) only when pressed to fire an ESP-NOW packet, then dropping straight back to sleep so the battery lasts months. The wall-powered speaker unit stays always-on, listens for the signal, and drives a speaker through a BC547 transistor on GPIO25 to play the chime. I wrote all the firmware in C++ (Arduino IDE) and iterated through LED, speaker, and deep-sleep prototypes; my partner designed the 3D-printed weatherproof enclosure in Fusion 360." 
-           data-github="" 
+           data-github="https://github.com/IbraHIM-Howaid/wireless-doorbell" 
            data-demo="">
         <p class="project-num">01</p>
         <h3 class="project-title">Wireless Shop Doorbell</h3>
@@ -99,7 +99,7 @@
       <div class="project-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2"
            data-title="Carleton Manor EMR" 
            data-desc="A full-stack clinical Electronic Medical Record web app built for Carleton University's nursing simulation lab and actively used by nursing students and instructors. Students chart on simulated patients across 24 assessment sections (vitals, neuro, cardiovascular, MAR, and more); instructors get a dedicated admin panel with role-based access, real-time student activity tracking and online status, and bulk PDF chart export (a ZIP organized student → patient → PDF). I built the authentication and CSRF security layer, the data model, the instructor analytics dashboard, and a multi-page PDF generation engine that renders full patient assessment reports from live charting data, stamping each page's footer with who charted and who exported it. I coordinated with Carleton faculty to tailor the system to specific course requirements, and ran ongoing testing and QA to keep it reliable and secure under active use." 
-           data-github="" 
+           data-github="https://github.com/IbraHIM-Howaid/carleton-manor-emr" 
            data-demo="">
         <p class="project-num">02</p>
         <h3 class="project-title">Carleton Manor EMR</h3>
@@ -108,6 +108,22 @@
           <span class="tag">Python</span>
           <span class="tag">Flask</span>
           <span class="tag">PostgreSQL</span>
+        </div>
+        <span class="project-arrow">→</span>
+      </div>
+
+      <div class="project-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2"
+           data-title="Personal Portfolio Website" 
+           data-desc="The site you're on right now, hand-coded from scratch in vanilla HTML, CSS, and JavaScript with no templates or frameworks. I built scroll-triggered reveal animations with GSAP, an animated particle background with tsParticles, an interactive 3D tilt effect on these project cards, a typewriter intro, and this modal system for detailed write-ups, then made the whole layout responsive from desktop to mobile. I deployed it on GitHub Pages and configured a custom .me domain with the right DNS records and HTTPS. Debugging the deployment (DNS records, CNAMEs, propagation, and getting the certificate to issue) was a crash course in how the web actually fits together." 
+           data-github="https://github.com/IbraHIM-Howaid/Ibrahim_Al-Howaid_Resume" 
+           data-demo="https://al-howaid.me">
+        <p class="project-num">03</p>
+        <h3 class="project-title">Personal Portfolio Website</h3>
+        <p class="project-desc">A custom, responsive portfolio site built from scratch in vanilla HTML, CSS, and JavaScript, with GSAP animations and a custom domain on GitHub Pages.</p>
+        <div class="project-tags">
+          <span class="tag">JavaScript</span>
+          <span class="tag">GSAP</span>
+          <span class="tag">HTML/CSS</span>
         </div>
         <span class="project-arrow">→</span>
       </div>
@@ -290,6 +306,9 @@
       <a href="assets/Ibrahim Al-Howaid Resume 2026.pdf" target="_blank">Resume</a>
     </div>
   </section>
+
+
+  
 
   <footer>
     <span>© 2026 Ibrahim Al-Howaid</span>

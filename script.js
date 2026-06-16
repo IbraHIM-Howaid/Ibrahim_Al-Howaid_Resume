@@ -214,13 +214,13 @@ tsParticles.load({
     particles: {
       number: { value: 100, density: { enable: true, width: 800, height: 800 } },
       color: { value: ["#c8a96e", "#ffffff"] },
-      line_linked: {
-      color: "#ffffff",
-      distance: 150,
-      enable: true,
-      opacity: 0.4,
-      width: 1
-    },
+      links: {
+        enable: true,
+        distance: 150,
+        color: "#c8a96e",
+        opacity: 0.3,
+        width: 1
+      },
       opacity: { value: { min: 0.1, max: 0.5 } },
       size: { value: { min: 1, max: 2 } },
       move: { enable: true, speed: 0.5, direction: "none", random: true, straight: false, outModes: "out" }
@@ -232,13 +232,13 @@ tsParticles.load({
       modes: { 
         grab: { 
           distance: 150, 
-          links: { opacity: 0.3, color: "#c8a96e" } 
+          links: { opacity: 0.6, color: "#c8a96e" } 
         },
         repulse: { 
           distance: 120, 
-          duration: 0.8,       // Takes almost a full second to settle back down
-          factor: 0.5,         // Softens the aggressive push force
-          speed: 0.5,            // Slows down how fast they run away
+          duration: 0.8,
+          factor: 0.5,
+          speed: 0.5,
           easing: "ease-out-quad"
         } 
       }
