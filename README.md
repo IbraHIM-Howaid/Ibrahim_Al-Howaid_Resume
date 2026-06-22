@@ -1,6 +1,6 @@
 # Personal Portfolio Website
 
-My personal portfolio site, hand-coded from scratch in vanilla HTML, CSS, and JavaScript and deployed to a custom domain. It's the single home for my projects, resume, and contact info.
+My personal portfolio site, made from scratch in vanilla HTML, CSS, and JavaScript and deployed to a custom domain. It's the single home for my projects, resume, and contact info.
 
 **Live site:** [al-howaid.me](https://al-howaid.me)
 
