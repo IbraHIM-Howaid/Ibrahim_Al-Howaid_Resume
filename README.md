@@ -25,7 +25,7 @@ My personal portfolio site, hand-coded from scratch in vanilla HTML, CSS, and Ja
 
 **Task.** Design and build a portfolio website from scratch that presents my projects clearly and reflects my skills as a developer.
 
-**Action.** I hand-coded the entire site in vanilla HTML, CSS, and JavaScript with no templates or site builders, so every part was my own. I added scroll-triggered reveal animations, an interactive 3D tilt effect on project cards, a typewriter intro, and a modal system for detailed project write-ups, then made the layout fully responsive from desktop to mobile. I deployed it on GitHub Pages and configured a custom .me domain with the correct DNS records and HTTPS.
+**Action.** I built the entire site in vanilla HTML, CSS, and JavaScript with no templates or site builders, so every part was my own. I added scroll-triggered reveal animations, an interactive 3D tilt effect on project cards, a typewriter intro, and a modal system for detailed project write-ups, then made the layout fully responsive from desktop to mobile. I deployed it on GitHub Pages and configured a custom .me domain with the correct DNS records and HTTPS.
 
 **Result.** A live portfolio at [al-howaid.me](https://al-howaid.me) that presents all of my work in one place.
 
