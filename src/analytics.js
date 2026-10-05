@@ -1,12 +1,12 @@
 // Visit counting with GoatCounter (https://www.goatcounter.com): free, open source, no cookies.
 
 // Your GoatCounter site code, e.g. 'alhowaid' for alhowaid.goatcounter.com. Empty = analytics off.
-export const GOATCOUNTER_CODE = '';
+export const GOATCOUNTER_CODE = 'al-howaid';
 
-// Show the total in the footer once it reaches this many visits (small numbers can look worse than none).
+// Show the total in the footer once it reaches this many visits (0 = always show).
 // Needs "Allow adding visitor counts on your website" turned on in GoatCounter's settings.
 export const SHOW_VISIT_COUNTER = true;
-export const MIN_VISITS_TO_SHOW = 250;
+export const MIN_VISITS_TO_SHOW = 0;
 
 const ENDPOINT = GOATCOUNTER_CODE && `https://${GOATCOUNTER_CODE}.goatcounter.com`;
 
