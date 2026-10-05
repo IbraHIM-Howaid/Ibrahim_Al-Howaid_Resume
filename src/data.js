@@ -110,18 +110,20 @@ export const projects = [
   {
     title: 'Wireless Shop Doorbell',
     summary:
-      'A two-unit wireless doorbell built from two ESP32s communicating over ESP-NOW, with a deep-sleep battery button and a wall-powered chime. Firmware in C++, enclosure in Fusion 360.',
+      'A two-unit wireless doorbell installed in the SWIFT shop: two ESP32s talk over ESP-NOW, with a deep-sleep battery button and a wall-powered chime. Firmware in C++, enclosures 3D-printed.',
     details:
-      'A two-unit wireless doorbell built from scratch with a partner to solve a real access problem in the SWIFT workshop. Two ESP32 microcontrollers communicate directly via ESP-NOW, with no router needed. The battery-powered button unit spends almost all its time in deep sleep drawing near-zero power, waking on an RTC pin (GPIO33) only when pressed to fire an ESP-NOW packet, then dropping straight back to sleep so the battery lasts months. The wall-powered speaker unit stays always-on, listens for the signal, and drives a speaker through a BC547 transistor on GPIO25 to play the chime. I wrote all the firmware in C++ (Arduino IDE) and iterated through LED, speaker, and deep-sleep prototypes; my partner designed the 3D-printed weatherproof enclosure in Fusion 360.',
+      "A two-unit wireless doorbell built with my partner Aidan to solve a real access problem in the SWIFT workshop, and now installed there. The shop door locks automatically, so visitors went unnoticed when staff were in the classroom; now a press on the button outside plays a chime inside. Two ESP32s talk directly over ESP-NOW, with no router or Wi-Fi network. The button unit runs on a 26700 LiFePO4 cell wired to the 3V3 pin to skip the onboard regulator, and spends almost all its time in deep sleep: pressing the VEX bumper switch pulls GPIO33 (an RTC pin) low, waking the board just long enough to send one packet before it sleeps again, so the battery lasts months. The wall-powered speaker unit stays on, listening, and plays one of three randomized melodies through a BC547 transistor driver on GPIO25. I wrote all the firmware in C++ and took the design through three cycles, from a Micro:bit to an Arduino to the ESP32s; Aidan designed both 3D-printed enclosures in Fusion 360.",
     github: 'https://github.com/IbraHIM-Howaid/Swift-Doorbell',
     demo: '',
     tags: ['ESP32', 'ESP-NOW', 'C++'],
-    cover: { src: '/projects/doorbell/enclosure-card.webp', alt: 'The finished doorbell: a 3D-printed SWIFT enclosure with a button and a speaker' },
+    cover: { src: '/projects/doorbell/final-cover-card.webp', alt: 'The button unit: an ESP32, a LiFePO4 cell, and a red VEX bumper switch in a black 3D-printed case' },
     media: [
-      { type: 'image', src: '/projects/doorbell/enclosure.webp', alt: 'The 3D-printed enclosure with its button and speaker', caption: 'Enclosure, button, and speaker unit' },
-      { type: 'video', src: '/projects/doorbell/demo.mp4', poster: '/projects/doorbell/prototype.webp', caption: 'Demo of the second design cycle' },
-      { type: 'image', src: '/projects/doorbell/wiring.webp', alt: 'Wiring inside the open enclosure', caption: 'Wiring inside the enclosure' },
-      { type: 'image', src: '/projects/doorbell/prototype.webp', alt: 'Breadboard prototype with a lit push button', caption: 'Early breadboard prototype' },
+      { type: 'image', src: '/projects/doorbell/final-both-open.webp', alt: 'Both doorbell units with their lids off', caption: 'Both units: the button (black case) and the speaker (grey case)' },
+      { type: 'video', src: '/projects/doorbell/final-demo.mp4', poster: '/projects/doorbell/final-video-poster.webp', caption: 'Demo of the final build' },
+      { type: 'image', src: '/projects/doorbell/final-button.webp', alt: 'Button unit: ESP32, LiFePO4 cell and VEX bumper switch', caption: 'Button unit: ESP32, LiFePO4 cell, and VEX bumper switch' },
+      { type: 'image', src: '/projects/doorbell/final-speaker.webp', alt: 'Speaker unit: ESP32, BC547 driver circuit and speaker', caption: 'Speaker unit: ESP32, BC547 driver circuit, and speaker' },
+      { type: 'image', src: '/projects/doorbell/final-lid-on.webp', alt: 'Speaker unit with its sliding lid next to the open button unit', caption: 'Speaker unit with its sliding lid, next to the button unit' },
+      { type: 'image', src: '/projects/doorbell/prototype.webp', alt: 'Breadboard prototype with a lit push button', caption: 'Where it started: the Arduino prototype from design cycle 2' },
     ],
   },
   {
