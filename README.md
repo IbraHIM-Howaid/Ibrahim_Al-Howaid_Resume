@@ -1,6 +1,6 @@
 # Personal Portfolio Website
 
-My personal portfolio site, hand-coded from scratch in vanilla HTML, CSS, and JavaScript and deployed to a custom domain. It is the single home for my projects, resume, and contact info.
+My personal portfolio site, built from scratch with React, Vite, and Motion and deployed to a custom domain. It is the single home for my projects, resume, and contact info.
 
 **Live site:** [al-howaid.me](https://al-howaid.me)
 
@@ -12,7 +12,7 @@ My personal portfolio site, hand-coded from scratch in vanilla HTML, CSS, and Ja
 
 **Task.** Design and build a portfolio website from scratch that presents my projects clearly and reflects my skills as a developer.
 
-**Action.** I hand-coded the entire site in vanilla HTML, CSS, and JavaScript with no templates or site builders, so every part was my own. I added scroll-triggered reveal animations, an interactive 3D tilt effect on project cards, a typewriter intro, and a modal system for detailed project write-ups, then made the layout fully responsive from desktop to mobile. I deployed it on GitHub Pages and configured a custom .me domain with the correct DNS records and HTTPS.
+**Action.** I built the entire site myself with no templates or site builders (first in vanilla HTML, CSS, and JavaScript, then rebuilt in React). I added scroll-triggered reveal animations, an interactive 3D tilt effect on project cards, a typewriter intro, and a modal system for detailed project write-ups, then made the layout fully responsive from desktop to mobile. I deployed it on GitHub Pages and configured a custom .me domain with the correct DNS records and HTTPS.
 
 **Result.** A live portfolio at [al-howaid.me](https://al-howaid.me) that presents all of my work in one place.
 
@@ -22,10 +22,10 @@ My personal portfolio site, hand-coded from scratch in vanilla HTML, CSS, and Ja
 
 | Area | Tools |
 |------|-------|
-| Markup / Style | HTML, CSS (no framework) |
-| Interactivity | Vanilla JavaScript |
-| Animation | GSAP (scroll-triggered reveals), tsParticles |
-| Hosting | GitHub Pages |
+| Framework / Build | React, Vite |
+| Style | CSS (no framework) |
+| Animation | Motion (scroll reveals, magnetic buttons, 3D tilt, modal), tsParticles |
+| Hosting | GitHub Pages (deployed by a GitHub Actions workflow) |
 | Domain / DNS | Namecheap (.me), custom A + CNAME records, HTTPS |
 | Tooling | Git/GitHub, VS Code |
 
@@ -33,8 +33,8 @@ My personal portfolio site, hand-coded from scratch in vanilla HTML, CSS, and Ja
 
 ## Features
 
-- Built entirely by hand, no frameworks or site builders
-- Scroll-triggered reveal animations (GSAP) and an animated particle background (tsParticles)
+- Built entirely by hand, no site builders
+- Scroll-triggered reveal animations (Motion) and an animated particle background (tsParticles)
 - Interactive 3D tilt effect on project cards
 - Typewriter intro animation
 - Modal system that surfaces detailed write-ups per project
@@ -57,3 +57,16 @@ The final site follows that plan closely, with the animations and the custom dom
 ## What I Learned
 
 Beyond the front-end work, this project taught me the deployment side of web development: configuring DNS records, pointing a custom domain at GitHub Pages, and getting HTTPS working through a certificate. Debugging why the bare domain would not load (and learning how A records, CNAMEs, and propagation actually behaves) was a small crash course in how the web fits together.
+
+
+---
+
+## Development
+
+```bash
+npm install
+npm run dev      # local dev server
+npm run build    # production build into dist/
+```
+
+Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds the site and publishes it to GitHub Pages.
