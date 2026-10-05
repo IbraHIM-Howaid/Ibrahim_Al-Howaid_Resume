@@ -16,6 +16,26 @@ const glyphs = {
       <circle cx="12" cy="19.5" r="1" fill="currentColor" />
     </>
   ),
+  // Motion: an element sweeping along an eased curve.
+  motion: (
+    <>
+      <path d="M3 18c6 0 8-12 18-12" />
+      <circle cx="18" cy="6.5" r="2.5" fill="currentColor" />
+    </>
+  ),
+  // ReportLab: a generated PDF page.
+  document: (
+    <>
+      <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" />
+      <path d="M14 3v5h5M9 13h6M9 17h4" />
+    </>
+  ),
+  globe: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" />
+    </>
+  ),
 };
 
 export default function ToolIcon({ tool }) {

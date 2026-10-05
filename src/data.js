@@ -1,30 +1,34 @@
 import {
   siArduino,
+  siAuth0,
   siAutodesk,
   siCplusplus,
   siCss,
   siEspressif,
-  siFigma,
   siFlask,
   siGit,
   siGithub,
   siGithubactions,
+  siGooglegemini,
   siHtml5,
   siJavascript,
-  siLinux,
   siPostgresql,
   siPython,
   siReact,
+  siSqlite,
+  siTypescript,
   siVite,
 } from 'simple-icons';
 
-// `icon` is a simple-icons brand logo; `glyph` is a line icon for tools without one (see ToolIcon.jsx).
+// Mirrors the Technical Skills section of the resume.
+// `icon` is a simple-icons brand logo; `glyph` is a line icon for things without one (see ToolIcon.jsx).
 export const toolGroups = [
   {
     label: 'Languages',
     tools: [
       { name: 'Python', icon: siPython },
       { name: 'JavaScript', icon: siJavascript },
+      { name: 'TypeScript', icon: siTypescript },
       { name: 'C++', icon: siCplusplus },
       { name: 'SQL', glyph: 'database' },
       { name: 'HTML', icon: siHtml5 },
@@ -32,37 +36,43 @@ export const toolGroups = [
     ],
   },
   {
-    label: 'Web & backend',
+    label: 'Frameworks, libraries & databases',
     tools: [
       { name: 'React', icon: siReact },
       { name: 'Flask', icon: siFlask },
       { name: 'Vite', icon: siVite },
+      { name: 'Motion', glyph: 'motion' },
+      { name: 'ReportLab', glyph: 'document' },
       { name: 'PostgreSQL', icon: siPostgresql },
+      { name: 'SQLite', icon: siSqlite },
+      { name: 'Gemini API', icon: siGooglegemini },
+      { name: 'Auth0', icon: siAuth0 },
     ],
   },
   {
-    label: 'Hardware',
+    label: 'Embedded & hardware',
     tools: [
       { name: 'ESP32', icon: siEspressif },
-      { name: 'Arduino', icon: siArduino },
       { name: 'ESP-NOW', glyph: 'wireless' },
+      { name: 'Fusion 360', icon: siAutodesk },
     ],
   },
   {
-    label: 'Tooling',
+    label: 'Tools',
     tools: [
       { name: 'Git', icon: siGit },
       { name: 'GitHub', icon: siGithub },
       { name: 'GitHub Actions', icon: siGithubactions },
       { name: 'VS Code', glyph: 'code' },
-      { name: 'Linux', icon: siLinux },
+      { name: 'Arduino IDE', icon: siArduino },
     ],
   },
   {
-    label: 'Design',
+    label: 'Spoken',
     tools: [
-      { name: 'Fusion 360', icon: siAutodesk },
-      { name: 'Figma', icon: siFigma },
+      { name: 'English', glyph: 'globe' },
+      { name: 'French', glyph: 'globe' },
+      { name: 'Arabic', glyph: 'globe' },
     ],
   },
 ];
@@ -81,6 +91,22 @@ export const typedStrings = [
 ];
 
 export const projects = [
+  {
+    title: 'myUni.courses',
+    summary:
+      'A uOttawa schedule builder made at Hack the Hill III: describe your ideal week in plain English and get conflict-free timetables, ranked and explained. I built the frontend and the AI and calendar integrations.',
+    details:
+      'Built with a team of four in 36 hours at Hack the Hill III (uOttawa, September 2026). Students pick their courses, describe what they want in plain English ("no classes before 10, Fridays off, good profs matter most"), and get conflict-free schedules built from live uoCampus data, scored on professor ratings, class times, and gaps, each with a short explanation of its trade-offs. My part was the React and TypeScript frontend (the week grid, class blocks, preference panel and sliders, and the animations) plus the AI and integrations. Gemini turns a student\'s sentence into weights that show up as sliders they can see and adjust, summarizes professor reviews, and writes each schedule\'s explanation from facts the algorithm has already computed, so it can only phrase what is actually true. Auth0 handles sign-in, and schedules export to .ics or straight into Google Calendar, skipping reading week.',
+    github: 'https://github.com/HoussemDegachi/MyUniCourses',
+    demo: 'https://myuni.courses',
+    devpost: 'https://devpost.com/software/ucourses',
+    tags: ['React', 'TypeScript', 'Gemini'],
+    cover: { src: '/projects/myuni/schedule-card.webp', alt: 'A generated weekly schedule in myUni.courses with its match score' },
+    media: [
+      { type: 'image', src: '/projects/myuni/schedule.webp', alt: 'Generated schedule with score breakdown', caption: 'Best-match schedule for first-year Computer Science, with its score breakdown' },
+      { type: 'image', src: '/projects/myuni/preferences.webp', alt: 'Preference panel and empty week grid', caption: 'Plain-English preferences, turned into adjustable sliders' },
+    ],
+  },
   {
     title: 'Wireless Shop Doorbell',
     summary:
@@ -129,29 +155,67 @@ export const projects = [
   },
 ];
 
+export const hackathons = [
+  {
+    event: 'Hack the Hill III',
+    host: 'University of Ottawa',
+    date: 'Sep 2026',
+    project: 'myUni.courses',
+    role: 'Frontend developer',
+    text: 'Frontend developer on a team building an AI course schedule maker for uOttawa, with natural-language preferences and RateMyProf summaries.',
+    links: [
+      { label: 'Devpost', href: 'https://devpost.com/software/ucourses' },
+      { label: 'Live site', href: 'https://myuni.courses' },
+    ],
+  },
+  {
+    event: 'Hack Club Lift-Off',
+    host: 'Nokia',
+    project: 'Cosmic Brews',
+    role: 'Frontend developer',
+    text: 'Built the frontend (UI/UX in HTML, CSS, and JavaScript) for Cosmic Brews, a cafe game where players decipher alien languages to serve customers.',
+  },
+  {
+    event: 'Hack Club Campfire',
+    host: 'Kinaxis',
+    project: 'Mole mining game',
+    role: 'Game jam',
+    text: 'Built a game jam entry about a mole mining underground while working in a team.',
+  },
+];
+
 export const experience = [
+  {
+    logoText: 'TdJ', // no logo available, so the timeline shows these initials instead
+    date: 'Jun 2022 to Sep 2022',
+    title: 'Teaching Assistant',
+    issuer: 'Terre-des-Jeunes School',
+    bullets: [
+      'Managed **course material distribution** and answered inquiries from **students, parents, and faculty** for the **Arabic-language** Sunday school program.',
+    ],
+  },
   {
     logo: '/assets/Yipi Logo.png',
     logoAlt: 'YIPI Logo',
-    date: '2023 to 2024',
+    date: 'Dec 2023 to Mar 2024',
     title: 'Youth in Policing Initiative Student',
     issuer: 'Ottawa Police Service',
     bullets: [
-      'Developed teamwork, communication, and leadership skills through diverse work assignments.',
-      'Maintained confidentiality and professionalism while handling sensitive information in a police environment.',
-      'Participated in educational workshops to gain insight into law enforcement and community service.',
+      'Developed **teamwork, communication, and leadership** skills through diverse work assignments.',
+      'Maintained **confidentiality and professionalism** while handling sensitive information in a police environment.',
+      'Participated in educational workshops to gain insight into **law enforcement and community service**.',
     ],
   },
   {
     logo: '/assets/ocdsb-logo.png',
     logoAlt: 'OCDSB Logo',
-    date: '2026 to Present',
+    date: 'Feb 2026 to Jun 2026',
     title: 'SWIFT Co-op Student',
     issuer: 'OCDSB SWIFT Program, Kanata North',
     bullets: [
-      "Designed and shipped a full-stack clinical EMR web app actively used by Carleton University's nursing simulation lab.",
-      'Built a wireless ESP32 doorbell system (ESP-NOW, deep sleep, C++ firmware) from scratch with a partner.',
-      'Toured and received technical briefings from BlackBerry QNX, Nokia, Telesat, Nordion, Ross Video, and the NRC Photonics Fabrication Centre.',
+      "Designed and shipped a **full-stack clinical EMR** web app actively used by **Carleton University's nursing simulation lab**.",
+      'Built a **wireless ESP32 doorbell** system (ESP-NOW, deep sleep, C++ firmware) from scratch with a partner.',
+      'Toured and received technical briefings from **BlackBerry QNX, Nokia, Telesat, Nordion, Ross Video**, and the **NRC Photonics Fabrication Centre**.',
     ],
   },
 ];
@@ -160,26 +224,26 @@ export const education = [
   {
     logo: '/assets/University_of_Ottawa_Logo.svg.png',
     logoAlt: 'University of Ottawa Logo',
-    date: '2026 to Present',
+    date: 'Sep 2026 to Present',
     title: 'Honours BSc in Computer Science (Co-op)',
     issuer: 'University of Ottawa',
-    text: 'Admitted to the Honours Computer Science program with co-op, combining academic coursework with paid industry work terms.',
+    text: 'Admitted to the **Honours Computer Science** program with **co-op**, combining academic coursework with **paid industry work terms**.',
   },
   {
     logo: '/assets/ocdsb-logo.png',
     logoAlt: 'OCDSB Logo',
-    date: '2026 to Present',
+    date: 'Feb 2026 to Jun 2026',
     title: 'OCDSB SWIFT Program',
     issuer: 'SWIFT Launch Secondary, Kanata North Technology Park',
-    text: "Selected for a competitive co-op program embedded in Canada's largest tech hub, building industry-led projects alongside professional engineers. Designed and shipped a full-stack EMR used by Carleton University, built a wireless ESP32 doorbell, and toured industry leaders including BlackBerry QNX, Nokia, Telesat, Nordion, Ross Video, and the NRC Photonics Fabrication Centre.",
+    text: "Selected for a **competitive co-op program** embedded in **Canada's largest tech hub**, building industry-led projects alongside professional engineers. Designed and shipped a **full-stack EMR** used by Carleton University, built a **wireless ESP32 doorbell**, and toured industry leaders including **BlackBerry QNX, Nokia, Telesat, Nordion, Ross Video**, and the **NRC Photonics Fabrication Centre**.",
   },
   {
     logo: '/assets/SRB Logo.png',
     logoAlt: 'College Logo',
-    date: '2022 to 2026',
+    date: 'Sep 2022 to Jun 2026',
     title: 'Highschool Degree',
     issuer: 'Sir Robert Borden Highschool',
-    text: 'High school diploma with a focus on STEM.',
+    text: 'High school diploma with a focus on **STEM**.',
   },
 ];
 

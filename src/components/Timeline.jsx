@@ -2,6 +2,19 @@ import { Fragment } from 'react';
 import Reveal from './Reveal.jsx';
 import SectionLabel from './SectionLabel.jsx';
 
+// Renders **phrase** as a gold highlight; everything else stays plain text.
+function highlight(text) {
+  return text.split(/\*\*(.+?)\*\*/g).map((part, i) =>
+    i % 2 ? (
+      <strong key={i} className="hl">
+        {part}
+      </strong>
+    ) : (
+      part
+    )
+  );
+}
+
 function TimelineItem({ item }) {
   const lines = item.bullets;
   return (
@@ -9,7 +22,13 @@ function TimelineItem({ item }) {
       <div className="timeline-dot"></div>
       <div className="connected-timeline-content">
         <div className="timeline-header">
-          <img className="timeline-logo" src={item.logo} alt={item.logoAlt} />
+          {item.logo ? (
+            <img className="timeline-logo" src={item.logo} alt={item.logoAlt} />
+          ) : (
+            <div className="timeline-logo timeline-logo-text" aria-hidden="true">
+              {item.logoText}
+            </div>
+          )}
           <div className="timeline-meta">
             <p className="timeline-date">{item.date}</p>
             <h3 className="timeline-title">{item.title}</h3>
@@ -20,11 +39,11 @@ function TimelineItem({ item }) {
           {lines
             ? lines.map((line, i) => (
                 <Fragment key={i}>
-                  •{line}
+                  •{highlight(line)}
                   {i < lines.length - 1 && <br />}
                 </Fragment>
               ))
-            : item.text}
+            : highlight(item.text)}
         </p>
       </div>
     </Reveal>

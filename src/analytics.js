@@ -22,11 +22,13 @@ export function startAnalytics() {
   document.head.appendChild(script);
 }
 
-// Total visits for the whole site, or null if unavailable (analytics off, counter not public, blocked).
+// Visits to the homepage, or null if unavailable (analytics off, counter not public, blocked).
+// The site is one page, so this is effectively the total. GoatCounter's site-wide TOTAL counter
+// is recalculated on a delay, while per-page counts update much sooner.
 export async function fetchTotalVisits() {
   if (!ENDPOINT || !SHOW_VISIT_COUNTER) return null;
   try {
-    const res = await fetch(`${ENDPOINT}/counter/TOTAL.json`);
+    const res = await fetch(`${ENDPOINT}/counter/${encodeURIComponent('/')}.json`);
     if (!res.ok) return null;
     const { count } = await res.json();
     // GoatCounter formats the number for display (e.g. "1,284" or "1 284"), so keep only the digits.

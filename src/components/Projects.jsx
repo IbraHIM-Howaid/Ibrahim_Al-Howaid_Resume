@@ -164,6 +164,11 @@ function ProjectModal({ project, onClose }) {
               View GitHub
             </Magnetic>
           )}
+          {project.devpost && (
+            <Magnetic href={project.devpost} target="_blank" rel="noopener noreferrer" className="btn-ghost">
+              Devpost
+            </Magnetic>
+          )}
           {project.demo && (
             <Magnetic href={project.demo} target="_blank" rel="noopener noreferrer" className="btn-primary">
               Live Demo
