@@ -497,6 +497,8 @@ footer {
   footer img { max-width: 100%; height: auto; }
 }
 
+.visit-counter { font-variant-numeric: tabular-nums; } /* digits don't jitter while counting up */
+
 /* ── Typewriter Cursor Color ── */
 .typed-cursor {
   color: var(--accent);
