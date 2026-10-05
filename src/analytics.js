@@ -22,13 +22,20 @@ export function startAnalytics() {
   document.head.appendChild(script);
 }
 
-// Visits to the homepage, or null if unavailable (analytics off, counter not public, blocked).
-// The site is one page, so this is effectively the total. GoatCounter's site-wide TOTAL counter
-// is recalculated on a delay, while per-page counts update much sooner.
+// GoatCounter caches each counter URL for hours (we saw a 10-hour-old "1" while the real total was 9).
+// Any start date before the site existed gives the same all-time total, so stepping through
+// equivalent dates once an hour gives a fresh URL every hour: the number is at most about an
+// hour old, and GoatCounter still only has to calculate it about once an hour.
+function hourlyStartDate() {
+  const hour = Math.floor(Date.now() / 3_600_000) % 168; // cycles weekly through 168 dates
+  return new Date(Date.UTC(2025, 0, 1) + hour * 86_400_000).toISOString().slice(0, 10);
+}
+
+// Total visits for the whole site, or null if unavailable (analytics off, counter not public, blocked).
 export async function fetchTotalVisits() {
   if (!ENDPOINT || !SHOW_VISIT_COUNTER) return null;
   try {
-    const res = await fetch(`${ENDPOINT}/counter/${encodeURIComponent('/')}.json`);
+    const res = await fetch(`${ENDPOINT}/counter/TOTAL.json?start=${hourlyStartDate()}`);
     if (!res.ok) return null;
     const { count } = await res.json();
     // GoatCounter formats the number for display (e.g. "1,284" or "1 284"), so keep only the digits.
