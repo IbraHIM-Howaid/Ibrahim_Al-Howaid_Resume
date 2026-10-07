@@ -23,7 +23,7 @@ function TimelineItem({ item }) {
       <div className="connected-timeline-content">
         <div className="timeline-header">
           {item.logo ? (
-            <img className="timeline-logo" src={item.logo} alt={item.logoAlt} />
+            <img className="timeline-logo" src={item.logo} alt={item.logoAlt} width="50" height="50" loading="lazy" decoding="async" />
           ) : (
             <div className="timeline-logo timeline-logo-text" aria-hidden="true">
               {item.logoText}

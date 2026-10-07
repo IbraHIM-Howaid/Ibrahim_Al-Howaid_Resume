@@ -25,12 +25,18 @@ function useActiveSection() {
       const passed = sections.filter((s) => s.getBoundingClientRect().top <= innerHeight * 0.45);
       setActive(passed.length ? `#${passed[passed.length - 1].id}` : null);
     };
+    // Measure at most once per frame; scroll events can fire several times per frame on phones.
+    let frame = 0;
+    const schedule = () => {
+      if (!frame) frame = requestAnimationFrame(() => { frame = 0; update(); });
+    };
     update();
-    window.addEventListener('scroll', update, { passive: true });
-    window.addEventListener('resize', update);
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', schedule);
     return () => {
-      window.removeEventListener('scroll', update);
-      window.removeEventListener('resize', update);
+      cancelAnimationFrame(frame);
+      window.removeEventListener('scroll', schedule);
+      window.removeEventListener('resize', schedule);
     };
   }, []);
   return active;

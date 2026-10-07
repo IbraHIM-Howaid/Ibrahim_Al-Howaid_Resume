@@ -60,7 +60,7 @@ export default function Certifications() {
                   {cert.logo.text ? (
                     <h3 className="card-logo-text">{cert.logo.text}</h3>
                   ) : (
-                    <img src={cert.logo.src} alt={cert.logo.alt} height={cert.logo.height} />
+                    <img src={cert.logo.src} alt={cert.logo.alt} height={cert.logo.height} loading="lazy" decoding="async" />
                   )}
                 </div>
                 <h3>{cert.title}</h3>

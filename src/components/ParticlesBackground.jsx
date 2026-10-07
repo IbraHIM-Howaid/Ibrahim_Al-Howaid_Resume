@@ -1,39 +1,29 @@
-import { useEffect, useMemo, useState } from 'react';
-import Particles, { initParticlesEngine } from '@tsparticles/react';
-import { loadSlim } from '@tsparticles/slim';
+import { lazy, Suspense, useEffect, useState } from 'react';
+import { useReducedMotion } from 'motion/react';
+
+// tsParticles is the largest dependency on the page. It's decoration, so it loads in its own chunk once
+// the browser is idle, after the content is already on screen and interactive.
+const ParticlesCanvas = lazy(() => import('./ParticlesCanvas.jsx'));
 
 export default function ParticlesBackground() {
-  const [ready, setReady] = useState(false);
+  const [load, setLoad] = useState(false);
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
-    }).then(() => setReady(true));
+    const start = () => setLoad(true);
+    if ('requestIdleCallback' in window) {
+      const id = requestIdleCallback(start, { timeout: 2500 });
+      return () => cancelIdleCallback(id);
+    }
+    const id = setTimeout(start, 1200);
+    return () => clearTimeout(id);
   }, []);
 
-  const options = useMemo(
-    () => ({
-      fullScreen: { enable: false },
-      background: { color: { value: 'transparent' } },
-      particles: {
-        number: { value: 100, density: { enable: true, width: 800, height: 800 } },
-        color: { value: ['#c8a96e', '#ffffff'] },
-        links: { enable: true, distance: 150, color: '#c8a96e', opacity: 0.3, width: 1 },
-        opacity: { value: { min: 0.1, max: 0.5 } },
-        size: { value: { min: 1, max: 2 } },
-        move: { enable: true, speed: 0.5, direction: 'none', random: true, straight: false, outModes: 'out' },
-      },
-      interactivity: {
-        events: { onHover: { enable: true, mode: ['grab', 'repulse'] } },
-        modes: {
-          grab: { distance: 150, links: { opacity: 0.6, color: '#c8a96e' } },
-          repulse: { distance: 120, duration: 0.8, factor: 0.5, speed: 0.5, easing: 'ease-out-quad' },
-        },
-      },
-    }),
-    []
+  if (!load) return null;
+  return (
+    <Suspense fallback={null}>
+      {/* With reduced motion the constellation still shows, but holds still. */}
+      <ParticlesCanvas still={!!reduceMotion} />
+    </Suspense>
   );
-
-  if (!ready) return null;
-  return <Particles id="tsparticles" className="particles-bg" options={options} />;
 }

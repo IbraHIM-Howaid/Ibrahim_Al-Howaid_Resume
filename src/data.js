@@ -197,7 +197,7 @@ export const experience = [
     ],
   },
   {
-    logo: '/assets/Yipi Logo.png',
+    logo: '/assets/optimized/yipi-logo.webp',
     logoAlt: 'YIPI Logo',
     date: 'Dec 2023 to Mar 2024',
     title: 'Youth in Policing Initiative Student',
@@ -209,7 +209,7 @@ export const experience = [
     ],
   },
   {
-    logo: '/assets/ocdsb-logo.png',
+    logo: '/assets/optimized/ocdsb-logo.webp',
     logoAlt: 'OCDSB Logo',
     date: 'Feb 2026 to Jun 2026',
     title: 'SWIFT Co-op Student',
@@ -224,7 +224,7 @@ export const experience = [
 
 export const education = [
   {
-    logo: '/assets/University_of_Ottawa_Logo.svg.png',
+    logo: '/assets/optimized/uottawa-logo.webp',
     logoAlt: 'University of Ottawa Logo',
     date: 'Sep 2026 to Present',
     title: 'Honours BSc in Computer Science (Co-op)',
@@ -232,7 +232,7 @@ export const education = [
     text: 'Admitted to the **Honours Computer Science** program with **co-op**, combining academic coursework with **paid industry work terms**.',
   },
   {
-    logo: '/assets/ocdsb-logo.png',
+    logo: '/assets/optimized/ocdsb-logo.webp',
     logoAlt: 'OCDSB Logo',
     date: 'Feb 2026 to Jun 2026',
     title: 'OCDSB SWIFT Program',
@@ -240,7 +240,7 @@ export const education = [
     text: "Selected for a **competitive co-op program** embedded in **Canada's largest tech hub**, building industry-led projects alongside professional engineers. Designed and shipped a **full-stack EMR** used by Carleton University, built a **wireless ESP32 doorbell**, and toured industry leaders including **BlackBerry QNX, Nokia, Telesat, Nordion, Ross Video**, and the **NRC Photonics Fabrication Centre**.",
   },
   {
-    logo: '/assets/SRB Logo.png',
+    logo: '/assets/optimized/srb-logo.webp',
     logoAlt: 'College Logo',
     date: 'Sep 2022 to Jun 2026',
     title: 'Highschool Degree',
@@ -252,7 +252,7 @@ export const education = [
 export const certifications = [
   {
     logo: {
-      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/WHMIS_logo.svg/1280px-WHMIS_logo.svg.png?_=20221111180316',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/WHMIS_logo.svg/250px-WHMIS_logo.svg.png?_=20221111180316',
       alt: 'WHMIS Logo',
       height: 60,
     },
@@ -261,7 +261,7 @@ export const certifications = [
     href: '#',
   },
   {
-    logo: { src: '/assets/SJA.png', alt: 'St. John Ambulance Logo', height: 60 },
+    logo: { src: '/assets/optimized/sja-logo.webp', alt: 'St. John Ambulance Logo', height: 60 },
     title: 'Emergency First Aid + Level C CPR + AED',
     issuer: 'St. John Ambulance • 2024',
     href: '/assets/Ibrahim Al-Howaid First Aid Certificate.pdf',

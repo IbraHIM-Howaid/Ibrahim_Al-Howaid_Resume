@@ -105,7 +105,17 @@ export default function Hero() {
         transition={enter(1.95, 0.8)}
       >
         <div className="avatar-frame">
-          <img src="/assets/Ibrahim Photo.jpeg" alt="Ibrahim Al-Howaid" className="profile-img" />
+          <img
+            src="/assets/optimized/portrait-1000.webp"
+            srcSet="/assets/optimized/portrait-500.webp 500w, /assets/optimized/portrait-1000.webp 1000w"
+            sizes="(max-width: 768px) 55vw, 500px"
+            width="1000"
+            height="1778"
+            alt="Ibrahim Al-Howaid"
+            className="profile-img"
+            fetchPriority="high"
+            decoding="async"
+          />
         </div>
         <motion.div
           className="deco-line"

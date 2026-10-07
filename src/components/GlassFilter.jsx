@@ -1,11 +1,16 @@
 import { useEffect, useState } from 'react';
+import { perfTier } from '../perf.js';
 
 // Liquid-glass refraction: an SVG displacement filter whose map bends the backdrop inward along the
 // element's rounded edges, like light through the rim of a lens. Applied with
 // `backdrop-filter: url(#id)`, which only Chromium supports, so callers should gate it (see supportsRefraction).
 
+// Refraction re-runs an SVG displacement filter over everything behind the glass, so it's reserved for
+// Chromium on high-tier devices (see perf.js); everyone else gets the frosted glass without the bend.
 export const supportsRefraction = () =>
-  typeof navigator !== 'undefined' && !!navigator.userAgentData?.brands?.some((b) => b.brand === 'Chromium');
+  perfTier === 'high' &&
+  typeof navigator !== 'undefined' &&
+  !!navigator.userAgentData?.brands?.some((b) => b.brand === 'Chromium');
 
 // Signed distance from (x, y) to a rounded rect of size w×h and corner radius r (negative inside),
 // plus the outward normal at that point.
